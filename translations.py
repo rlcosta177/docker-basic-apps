@@ -16,6 +16,13 @@ color_translations = {
         'verde': 'green',
         'azul': 'blue',
         'índigo': 'indigo',
+        'violeta': 'violet',
+        'vermelho': 'rouge',
+        'laranja': 'orange',
+        'amarelo': 'jaune',
+        'verde': 'vert',
+        'azul': 'bleu',
+        'índigo': 'indigo',
         'violeta': 'violet'
     },
     'french': {
@@ -36,8 +43,10 @@ def translate_color(color, from_lang, to_lang):
     elif from_lang == 'portuguese' and to_lang == 'english':
         return color_translations['portuguese'].get(color, 'unknown')
     elif from_lang == 'portuguese' and to_lang == 'french':
-        return color_translations['portuguese'].get(color, 'unknown')
+        eng_color = color_translations['portuguese'].get(color, 'unknown')
+        return color_translations['french'].get(eng_color, 'unknown')
     elif from_lang == 'french' and to_lang == 'portuguese':
-        return color_translations['french'].get(color, 'unknown')
+        port_color = color_translations['french'].get(color, 'unknown')
+        return port_color
     else:
         return 'unknown'

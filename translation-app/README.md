@@ -11,7 +11,7 @@
 - docker build -t rlcosta121/translation-app .
 - docker push rlcosta121/translation-app
 - docker service create --name translation-app --replicas 3 --publish published=80,target=5000 rlcosta121/translation-app 
-OR
+- OR
 - docker service update --image rlcosta121/translation-app translation-app 
 
 ## Using the App

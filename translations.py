@@ -10,13 +10,13 @@ color_translations = {
         'violet': 'violeta'
     },
     'portuguese': {
-        'red': 'vermelho',
-        'orange': 'laranja',
-        'yellow': 'amarelo',
-        'green': 'verde',
-        'blue': 'azul',
-        'indigo': 'índigo',
-        'violet': 'violeta'
+        'vermelho': 'red',
+        'laranja': 'orange',
+        'amarelo': 'yellow',
+        'verde': 'green',
+        'azul': 'blue',
+        'indigo': 'indigo',
+        'violeta': 'violet'
     },
     'french': {
         'rouge': 'vermelho',
@@ -39,6 +39,16 @@ portuguese_to_french_translations = {
     'violeta': 'violet'
 }
 
+french_to_english_translations = {
+    'rouge': 'red',
+    'orange': 'orange',
+    'jaune': 'yellow',
+    'vert': 'green',
+    'bleu': 'blue',
+    'indigo': 'indigo',
+    'violet': 'violet'
+}
+
 def translate_color(color, from_lang, to_lang):
     if from_lang == 'english' and to_lang == 'portuguese':
         return color_translations['english'].get(color, 'unknown')
@@ -48,6 +58,11 @@ def translate_color(color, from_lang, to_lang):
         return portuguese_to_french_translations.get(color, 'unknown')
     elif from_lang == 'french' and to_lang == 'portuguese':
         for key, value in portuguese_to_french_translations.items():
+            if value == color:
+                return key
+        return 'unknown'
+    elif from_lang == 'french' and to_lang == 'english':
+        for key, value in french_to_english_translations.items():
             if value == color:
                 return key
         return 'unknown'

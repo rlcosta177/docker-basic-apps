@@ -17,7 +17,7 @@ OR
 ## Using the App
 
 Using the terminal:
-- curl "http://<your-ip>/translate?color=red&from=english&to=portuguese"
+- curl "http://your-ip/translate?color=red&from=english&to=portuguese"
 
 On a browser:
-- http://<your-ip>/translate?color=red&from=english&to=portuguese
+- http://your-ip/translate?color=red&from=english&to=portuguese

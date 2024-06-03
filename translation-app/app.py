@@ -1,6 +1,5 @@
 # app.py
-from flask import Flask, request, jsonify, render_template
-import os
+from flask import Flask, request, jsonify
 from translations import translate_color
 
 app = Flask(__name__)
@@ -16,12 +15,6 @@ def translate():
 
     translation = translate_color(color, from_lang, to_lang)
     return jsonify({'translation': translation})
-
-
-@app.route('/')
-def index():
-    port = request.host.split(':')[-1]  # Extract port from the request
-    return render_template('index.html', port=port)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

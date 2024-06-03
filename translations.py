@@ -36,10 +36,8 @@ def translate_color(color, from_lang, to_lang):
     elif from_lang == 'portuguese' and to_lang == 'english':
         return color_translations['portuguese'].get(color, 'unknown')
     elif from_lang == 'portuguese' and to_lang == 'french':
-        eng_color = color_translations['portuguese'].get(color, 'unknown')
-        return color_translations['english'].get(eng_color, 'unknown')
+        return color_translations['portuguese'].get(color, 'unknown')
     elif from_lang == 'french' and to_lang == 'portuguese':
-        port_color = color_translations['french'].get(color, 'unknown')
-        return port_color
+        return color_translations['french'].get(color, 'unknown')
     else:
         return 'unknown'

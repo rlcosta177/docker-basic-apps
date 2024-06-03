@@ -45,11 +45,13 @@ translations = {
 @app.route('/translate', methods=['GET'])
 def translate():
     color = request.args.get('color')
+    source_language = request.args.get('source_language')
     target_language = request.args.get('target_language')
-    if not color or not target_language:
-        return jsonify({'error': 'Please provide both color and target_language parameters'}), 400
     
-    key = f'{request.args.get("source_language")}_to_{target_language}'
+    if not color or not source_language or not target_language:
+        return jsonify({'error': 'Please provide color, source_language, and target_language parameters'}), 400
+    
+    key = f'{source_language}_to_{target_language}'
     
     if key in translations and color in translations[key]:
         return jsonify({'translated_color': translations[key][color]})

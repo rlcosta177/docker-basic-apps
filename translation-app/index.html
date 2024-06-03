@@ -3,29 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Translator</title>
+    <title>Container Port</title>
 </head>
 <body>
-    <h1>Color Translator</h1>
-    <form action="/translate" method="get">
-        <label for="color">Color:</label>
-        <input type="text" id="color" name="color" required><br><br>
-
-        <label for="from_lang">From Language:</label>
-        <select id="from_lang" name="from_lang" required>
-            <option value="english">English</option>
-            <option value="portuguese">Portuguese</option>
-            <option value="french">French</option>
-        </select><br><br>
-
-        <label for="to_lang">To Language:</label>
-        <select id="to_lang" name="to_lang" required>
-            <option value="english">English</option>
-            <option value="portuguese">Portuguese</option>
-            <option value="french">French</option>
-        </select><br><br>
-
-        <input type="submit" value="Translate">
-    </form>
+    <h1>Container Port Number:</h1>
+    <p>{{ port }}</p>
 </body>
 </html>
